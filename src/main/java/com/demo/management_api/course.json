@@ -1,0 +1,207 @@
+{
+  "status": "success",
+  "message": "success",
+  "data": [
+    {
+      "course_id": 24,
+      "modality_name": "Presencial",
+      "order_num": 1,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "Matematica",
+            "description": "Aquí aprenderás a sumar, restar, dividir y multiplicar, habilidades fundamentales para desarrollar una comprensión sólida de las matemáticas. Estas operaciones son esenciales en todos los aspectos de la vida diaria, desde manejar tus finanzas hasta resolver problemas complejos. Al dominar estas operaciones, estarás en el camino para adquirir destrezas más avanzadas en matemáticas, como álgebra, geometría y cálculo. Además, aprenderás trucos y estrategias para hacer estos cálculos más fáciles y rápidos, lo que te permitirá enfrentarte con confianza a cualquier desafío matemático. ¡Comienza tu viaje de aprendizaje y mejora tu capacidad para trabajar con números de manera efectiva!"
+          }
+        }
+      ],
+      "modules": [
+        {
+          "module_id": 29,
+          "order_num": 1,
+          "languages": [
+            {
+              "language": "es",
+              "fields": {
+                "title": "test5"
+              }
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": [
+        {
+          "file_id": 16,
+          "type": "thumbnail",
+          "link": "/courses/1754975225_BsJ8c.png"
+        },
+        {
+          "file_id": 17,
+          "type": "main",
+          "link": "/courses/1754975227_W1b6n.png"
+        },
+        {
+          "file_id": 29,
+          "type": "thumbnail",
+          "link": "/courses/1755545643_FZJYK.png"
+        },
+        {
+          "file_id": 35,
+          "type": "main",
+          "link": "/courses/1755547746_qXq54.png"
+        },
+        {
+          "file_id": 36,
+          "type": "main",
+          "link": "/courses/1755547751_zi27I.png"
+        },
+        {
+          "file_id": 37,
+          "type": "main",
+          "link": "/courses/1755547754_n8r3o.png"
+        },
+        {
+          "file_id": 39,
+          "type": "thumbnail",
+          "link": "/courses/1755553131_D4jf5.png"
+        },
+        {
+          "file_id": 40,
+          "type": "thumbnail",
+          "link": "/courses/1755553135_63qAD.png"
+        }
+      ]
+    },
+    {
+      "course_id": 25,
+      "modality_name": "Presencial",
+      "order_num": 5,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "Lenguaje",
+            "description": "ADsadsadsadfasiufhdaiufhduisahduisahdusads"
+          }
+        }
+      ],
+      "modules": [
+        {
+          "module_id": 14,
+          "order_num": 2,
+          "languages": [
+            {
+              "language": "es",
+              "fields": {
+                "title": "Registro de lenguaje",
+                "description": "Registro numero dos"
+              }
+            }
+          ],
+          "files": []
+        },
+        {
+          "module_id": 12,
+          "order_num": 1,
+          "languages": [
+            {
+              "language": "por",
+              "fields": {
+                "description": "Cadastro em português",
+                "title": "Cadastro em português"
+              }
+            },
+            {
+              "language": "en",
+              "fields": {
+                "title": "Z register",
+                "description": "Z register"
+              }
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "course_id": 27,
+      "modality_name": "Presencial",
+      "order_num": 4,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "Introducción a los algoritmos",
+            "description": "Introducción a los algoritmos"
+          }
+        },
+        {
+          "language": "en",
+          "fields": {
+            "title": "Introduction to algorithms",
+            "description": "Introduction to algorithms description"
+          }
+        }
+      ],
+      "modules": [
+        {
+          "module_id": 18,
+          "order_num": 2,
+          "languages": [
+            {
+              "language": "es",
+              "fields": {
+                "title": "Introducción 02"
+              }
+            }
+          ],
+          "files": []
+        },
+        {
+          "module_id": 17,
+          "order_num": 1,
+          "languages": [
+            {
+              "language": "en",
+              "fields": {
+                "title": "Introduction one"
+              }
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "course_id": 49,
+      "modality_name": "Presencial",
+      "order_num": 3,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "TestRegister",
+            "subtitle": "test",
+            "description": "test"
+          }
+        }
+      ],
+      "modules": [],
+      "files": [
+        {
+          "file_id": 18,
+          "type": "thumbnail",
+          "link": "/courses/1755113749_L95SG.png"
+        },
+        {
+          "file_id": 19,
+          "type": "main",
+          "link": "/courses/1755113754_MDeBi.png"
+        }
+      ]
+    }
+  ]
+}

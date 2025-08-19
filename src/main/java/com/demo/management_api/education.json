@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "message": "success",
+  "data": [
+    {
+      "education_id": 20,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "test"
+          }
+        }
+      ]
+    },
+    {
+      "education_id": 21,
+      "languages": [
+        {
+          "language": "en",
+          "fields": {
+            "title": "test2"
+          }
+        }
+      ]
+    },
+    {
+      "education_id": 1,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "Ingeniera de Sistemas e Informática"
+          }
+        },
+        {
+          "language": "en",
+          "fields": {
+            "title": "Systems and Informatics Engineer"
+          }
+        },
+        {
+          "language": "fr",
+          "fields": {
+            "title": "Génie des Systèmes et Informatique"
+          }
+        },
+        {
+          "language": "pt",
+          "fields": {
+            "title": "Engenharia de Sistemas e Informática"
+          }
+        },
+        {
+          "language": "de",
+          "fields": {
+            "title": "System- und Informatikingenieurwesen"
+          }
+        }
+      ]
+    },
+    {
+      "education_id": 22,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "test"
+          }
+        }
+      ]
+    },
+    {
+      "education_id": 2,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "Marketing"
+          }
+        },
+        {
+          "language": "en",
+          "fields": {
+            "title": "Marketing"
+          }
+        }
+      ]
+    },
+    {
+      "education_id": 15,
+      "languages": [
+        {
+          "language": "es",
+          "fields": {
+            "title": "Prueba de update"
+          }
+        }
+      ]
+    }
+  ]
+}
