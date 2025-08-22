@@ -3,6 +3,8 @@
 # ===================================================================
 server:
   port: 8080
+  servlet:
+    context-path: /api/v1
 spring:
   jackson:
     property-naming-strategy: SNAKE_CASE
@@ -46,12 +48,19 @@ security:
       expiration: 1800000
     refresh:
       expiration: 86400000
-    recover-password:
-      expiration: 900000
     user:
       generator: management_system
     hashed:
       secret: d0DMBKNAbVqoX6cT00DEpB/T5atRfONxoJpgM7o+dCM=
+
+# ===================================================================
+# LOG PROPERTIES
+# ===================================================================
+api:
+  uri:
+    domain:
+      auth: "/auth"
+
 
 # ===================================================================
 # LOG PROPERTIES

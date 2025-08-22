@@ -1,0 +1,52 @@
+// api/courses/{id}
+{
+  "data": [
+    {
+      "course_id": 24,
+      "modality_name": "Presencial",
+      "order_num": 1,
+      "title": "Matemática",
+      "description": "Aquí aprenderás a sumar, restar, dividir y multiplicar, habilidades fundamentales para desarrollar una comprensión sólida de las matemáticas. Estas operaciones son esenciales en todos los aspectos de la vida diaria, desde manejar tus finanzas hasta resolver problemas complejos. Al dominar estas operaciones, estarás en el camino para adquirir destrezas más avanzadas en matemáticas, como álgebra, geometría y cálculo. Además, aprenderás trucos y estrategias para hacer estos cálculos más fáciles y rápidos, lo que te permitirá enfrentarte con confianza a cualquier desafío matemático. ¡Comienza tu viaje de aprendizaje y mejora tu capacidad para trabajar con números de manera efectiva!",
+      "short_description": "asdasd",
+      "modules": [
+        {
+          "module_id": 29,
+          "order_num": 1,
+          "title": "test5",
+          "description": "asdad",
+          "lessons": [
+            {
+              "lesson_id": 1,
+              "order_num": 1,
+              "title": "asdad",
+              "created_time": "19/04/2025",
+              "description": "asdasd",
+              "time": "00:35:00",
+              "url_video": "https://www.youtube.com/watch?v=_6-zwdrqD3U&ab_channel=ElTraductordeIngenier%C3%ADa",
+              "file": [
+                {
+                  "file_name": "asdasd",
+                  "link": "route"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "file_id": 16,
+          "type": "main",
+          "link": "/courses/1754975225_BsJ8c.png",
+          "device_type": "tablet" // tablet - desktop - mobile
+        },
+        {
+          "file_id": 18,
+          "type": "main",
+          "link": "/courses/1754975225_BsJ8c.png",
+          "device_type": "mobile" // tablet - desktop - mobile
+        }
+      ]
+    }
+  ]
+}

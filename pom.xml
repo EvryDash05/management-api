@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>management_api</name>
     <description>management_api</description>
+    <packaging>jar</packaging>
     <url/>
     <licenses>
         <license/>
@@ -38,6 +39,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <!--Database dependencies-->
         <dependency>

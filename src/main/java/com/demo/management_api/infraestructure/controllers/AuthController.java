@@ -25,7 +25,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(ApiConstants.BASE_API_URL)
+@RequestMapping(path = ApiConstants.AUTH_PREFIX_ENDPOINT)
 public class AuthController {
 
     private final RefreshTokenBusiness refreshTokenBusiness;
@@ -34,17 +34,17 @@ public class AuthController {
     private final RecoveryPasswordService recoveryPasswordService;
 
     @PreAuthorize(ApiConstants.HAS_ROLE_ADMIN)
-    @PostMapping("/register")
+    @PostMapping(ApiConstants.REGISTER_ENDPOINT)
     public ResponseEntity<String> register(@RequestBody AuthUserRegisterRequest request){
         return ResponseEntity.ok(this.authBusiness.createUser(request));
     }
 
-    @PostMapping("/login")
+    @PostMapping(ApiConstants.LOGIN_ENDPOINT)
     public ResponseEntity<AuthResponse> login(@RequestBody AuthLoginRequest request){
         return ResponseEntity.ok(this.authBusiness.login(request));
     }
 
-    @PostMapping("/refresh-token")
+    @PostMapping(ApiConstants.REFRESH_TOKEN_ENDPOINT)
     public ResponseEntity<AuthResponse> refreshToken(){
         return ResponseEntity.ok(this.refreshTokenBusiness.createNewAccessToken());
     }
@@ -54,19 +54,19 @@ public class AuthController {
         return ResponseEntity.ok(this.userBusiness.findUserData(userDetails.getUserId()));
     }
 
-    @PostMapping("/send-email-recovery-password")
+    @PostMapping(ApiConstants.SEND_EMAIL_PASSWORD_RECOVERY_ENDPOINT)
     public ResponseEntity<String> recoveryPasswordRequest(@RequestBody SendRequestPasswordRequest request){
         return ResponseEntity.ok(this.recoveryPasswordService.sendRequestRecoverPassword(request).token);
     }
 
-    @PatchMapping("/reset-password")
+    @PatchMapping(ApiConstants.RESET_PASSWORD_ENDPOINT)
     public ResponseEntity<String> resetPassword(@RequestParam String token, @RequestBody ResetPasswordRequest request){
         Map<String, String> response = new HashMap<>();
         this.recoveryPasswordService.updatePassword(request, token);
         return ResponseEntity.ok(response.put("message", "Password updated successfully"));
     }
 
-    @PostMapping("/test")
+    @PostMapping(ApiConstants.TEST_ENDPOINT)
     public ResponseEntity<String> testing(){
         return ResponseEntity.ok("Status, OK!");
     }

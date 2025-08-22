@@ -12,7 +12,7 @@ public class FiltersRegistration {
     public FilterRegistrationBean<RefreshTokenValidator> refreshTokenFilterRegistration(RefreshTokenValidator filter) {
         FilterRegistrationBean<RefreshTokenValidator> registration = new FilterRegistrationBean<>();
         registration.setFilter(filter);
-        registration.addUrlPatterns("/api/v1/auth/refresh-token");
+        registration.addUrlPatterns("/auth/refresh-token");
         return registration;
     }
 

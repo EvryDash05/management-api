@@ -9,16 +9,14 @@ public class UrlConstants {
             "/auth/**",
     };
 
-    public static String[] authUrls() {
-        return new String[]{
-                "/api/v1/auth/register",
-                "/api/v1/auth/login",
-                "/api/v1/auth/send-email-recovery-password",
-                "/api/v1/auth/reset-password",
-                "/api/v1/auth/refresh-token",
-                "/api/v1/auth/test"
-        };
-    }
+    public static final String[] AUTH_URLS = {
+            "/auth/register",
+            "/auth/login",
+            "/auth/send-email-recovery-password",
+            "/auth/reset-password",
+            "/auth/refresh-token",
+            "/auth/test"
+    };
 
     public static final String[] DEV_URLS = {
             "http://localhost:5173"

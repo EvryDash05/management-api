@@ -1,0 +1,19 @@
+// /api/banners
+{
+  "data": [
+    {
+      "banner_id": 18,
+      "order_num": 1,
+      "redirect_link": "url",
+      "link": "/banner/1754975225_BsJ8c.png",
+      "device_type": "tablet" // tablet - desktop - mobile
+    },
+    {
+      "banner_id": 18,
+      "order_num": 1,
+      "redirect_link": "url",
+      "link": "/banner/1754975225_BsJ8c.png",
+      "device_type": "desktop" // tablet - desktop - mobile
+    }
+  ]
+}

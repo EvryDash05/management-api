@@ -21,11 +21,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-
-import java.util.Arrays;
-import java.util.List;
 
 /*
  * Main Spring Security configuration.
@@ -47,13 +42,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain mainSecurityFilter(final HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
-                // .cors(Customizer.withDefaults())
+                .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
-                    http.requestMatchers(PUBLIC_URLS).permitAll();
-                    http.requestMatchers(HttpMethod.POST, AUTH_URLS).permitAll();
-                    http.requestMatchers(HttpMethod.PATCH, "/api/v1/auth/reset-password").permitAll();
+                    http.requestMatchers(UrlConstants.PUBLIC_URLS).permitAll();
+                    http.requestMatchers(HttpMethod.POST, UrlConstants.AUTH_URLS).permitAll();
+                    http.requestMatchers(HttpMethod.PATCH, "/auth/reset-password").permitAll();
                     http.anyRequest().authenticated();
                 })
                 .addFilterBefore(new JwtTokenValidator(jwtUtils), BasicAuthenticationFilter.class)
@@ -77,39 +72,5 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-//    @Bean
-//    CorsConfigurationSource corsConfigurationSource() {
-//        CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowedOrigins(Arrays.asList(DEV_URLS));
-//        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-//        configuration.setAllowedHeaders(List.of("*"));
-//        configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
-//        configuration.setAllowCredentials(true);
-//        configuration.setMaxAge(3600L);
-//        return request -> configuration;
-//    }
-
-    private static final String[] PUBLIC_URLS = {
-            "/v3/api-docs/**",
-            "/swagger-ui/**",
-            "/swagger-ui.html/**",
-    };
-
-    private static final String[] AUTH_URLS = {
-            "/api/v1/auth/login",
-            "/api/v1/auth/refresh-token",
-            "/api/v1/auth/test",
-    };
-
-    /* private static final String[] AUTH_URLS = {
-            "/api/v1/auth/register",
-            "/api/v1/auth/send-email-recovery-password",
-            "/api/v1/auth/reset-password",
-    }; */
-
-    private static final String[] DEV_URLS = {
-            "http://localhost:5173"
-    };
 
 }

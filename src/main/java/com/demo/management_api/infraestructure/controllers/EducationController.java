@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(ApiConstants.BASE_API_URL)
+@RequestMapping()
 public class EducationController {
 
     public final EducationService educationService;
