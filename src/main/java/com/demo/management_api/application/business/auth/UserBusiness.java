@@ -7,6 +7,7 @@ import com.demo.management_api.domain.entity.UserEntity;
 import com.demo.management_api.domain.repository.auth.RoleRepository;
 import com.demo.management_api.domain.repository.auth.UserDetailRepository;
 import com.demo.management_api.domain.repository.auth.UserRepository;
+import com.demo.management_api.infraestructure.exceptions.custom.NotDataFoundException;
 import com.demo.management_api.infraestructure.models.request.AuthUserRegisterRequest;
 import com.demo.management_api.infraestructure.models.response.UserDetailsResponse;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,7 @@ public class UserBusiness implements UserService {
     public UserDetailsResponse findUserData(Integer userId){
         UserDetailEntity findUserDetailEntity = this.userDetailRepository
                 .findByUserId(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new NotDataFoundException("User not found with id: %s".formatted(userId)));
 
         return toUserDetailsResponse(findUserDetailEntity);
     }

@@ -8,6 +8,7 @@ import com.demo.management_api.commons.enums.RefreshTokensCreatedBy;
 import com.demo.management_api.commons.enums.UserRoles;
 import com.demo.management_api.domain.entity.UserEntity;
 import com.demo.management_api.domain.repository.auth.UserRepository;
+import com.demo.management_api.infraestructure.exceptions.custom.NotDataFoundException;
 import com.demo.management_api.infraestructure.models.request.AuthUserRegisterRequest;
 import com.demo.management_api.infraestructure.models.request.records.AuthLoginRequest;
 import com.demo.management_api.infraestructure.models.response.AuthResponse;
@@ -63,7 +64,7 @@ public class AuthBusiness implements AuthService {
 
     private UserEntity getUserByEmail(String email) {
         return this.userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Error to find user with email: " + email));
+                .orElseThrow(() -> new NotDataFoundException("User not found"));
     }
 
     private void createUserAndRoles(AuthUserRegisterRequest request, String role) {

@@ -4,13 +4,13 @@ import com.demo.management_api.application.services.TokenBlackListService;
 import com.demo.management_api.domain.entity.RefreshTokenEntity;
 import com.demo.management_api.domain.repository.auth.RefreshTokenRepository;
 import com.demo.management_api.infraestructure.exceptions.custom.BusinessException;
+import com.demo.management_api.infraestructure.exceptions.custom.NotDataFoundException;
 import com.demo.management_api.infraestructure.models.request.RefreshTokenContext;
 import com.demo.management_api.infraestructure.security.utils.JwtUtils;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -75,7 +75,7 @@ public class RefreshTokenValidator implements Filter {
                 throw new BusinessException(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Token revoked or expired");
 
             RefreshTokenEntity findToken = this.refreshTokenRepository.findByTokenHashAndRevokedFalse(hashedToken)
-                    .orElseThrow(() -> new BusinessException(HttpStatus.NOT_FOUND.value(), "Error to find token or revoked"));
+                    .orElseThrow(() -> new NotDataFoundException("Error to find token or revoked"));
             this.jwtUtils.validateNotExpired(findToken.getExpiresAt());
 
             return findToken;

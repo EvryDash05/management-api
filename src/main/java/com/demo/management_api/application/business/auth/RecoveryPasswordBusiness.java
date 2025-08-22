@@ -36,7 +36,7 @@ public class RecoveryPasswordBusiness implements RecoveryPasswordService {
     @CachePut(value = CacheConfigConstants.RECOVERY_PASSWORD_TOKENS, key = "#result.token")
     public RecoveryPasswordResponse sendRequestRecoverPassword(SendRequestPasswordRequest request) {
         UserEntity user = userRepository.findByEmail(request.email())
-                .orElseThrow(() -> new BusinessException(HttpStatus.NOT_FOUND.value(), "User not found"));
+                .orElseThrow(() -> new NotDataFoundException("User not found"));
 
         return new RecoveryPasswordResponse(generateTokenRecoveryPassword(), user.getId(), this.ipAddressContext.getIpAddress());
     }
@@ -61,7 +61,7 @@ public class RecoveryPasswordBusiness implements RecoveryPasswordService {
 
     private String applyPasswordChange(RecoveryPasswordResponse cache, String newPassword) {
         UserEntity findUser = this.userRepository.findById(cache.userId)
-                .orElseThrow(() -> new BusinessException(HttpStatus.NOT_FOUND.value(), "User not found"));
+                .orElseThrow(() -> new NotDataFoundException("User not found with id: %s".formatted(cache.getUserId())));
 
         findUser.setPassword(this.passwordEncoder.encode(newPassword));
         this.userRepository.save(findUser);

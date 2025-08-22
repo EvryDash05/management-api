@@ -1,6 +1,7 @@
 package com.demo.management_api.infraestructure.security.utils;
 
 import com.demo.management_api.domain.entity.UserEntity;
+import com.demo.management_api.infraestructure.exceptions.custom.NotDataFoundException;
 import com.demo.management_api.infraestructure.models.response.AuthResponse;
 import com.demo.management_api.infraestructure.models.CustomUserDetails;
 import com.demo.management_api.domain.repository.auth.UserRepository;
@@ -37,7 +38,7 @@ public class SecurityHelper {
 
     public UserEntity getUserByEmail(String email) {
         return this.userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Error to find user with email: " + email));
+                .orElseThrow(() -> new NotDataFoundException("Error to find user with email: %s".formatted(email)));
     }
 
     public AuthResponse buildAuthResponse(UserEntity user, String refreshToken) {
